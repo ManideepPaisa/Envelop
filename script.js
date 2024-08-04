@@ -10,41 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
     });
 
-    // Add floating particles
-    const container = document.querySelector('.container');
-    for (let i = 0; i < 50; i++) {
-        createParticle(container);
+    // Add stars to the background
+    const starsContainer = document.querySelector('.stars');
+    for (let i = 0; i < 100; i++) {
+        createStar(starsContainer);
     }
 });
 
-function createParticle(container) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
+function createStar(container) {
+    const star = document.createElement('div');
+    star.classList.add('star');
     
-    const size = Math.random() * 5 + 2;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
+    const size = Math.random() * 3 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
     
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
     
-    const duration = Math.random() * 20 + 10;
-    particle.style.animation = `float ${duration}s linear infinite`;
+    const duration = Math.random() * 3 + 1;
+    star.style.animation = `twinkle ${duration}s infinite`;
     
-    container.appendChild(particle);
+    container.appendChild(star);
 }
 
 // Add this CSS to your styles.css file
 /*
-.particle {
+.star {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #fff;
     border-radius: 50%;
     pointer-events: none;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-100vh) rotate(360deg); }
 }
 */
