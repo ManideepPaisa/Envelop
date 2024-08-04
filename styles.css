@@ -168,3 +168,8 @@ body, html {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
+.envelope.open .letter {
+    opacity: 1;
+    transition-delay: 0.6s;
+    z-index: 4;
+}
