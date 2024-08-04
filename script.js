@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     envelope.addEventListener('click', () => {
         envelope.classList.toggle('open');
+        
+        // Add a slight delay to ensure the message is visible after the animation
+        setTimeout(() => {
+            letter.style.zIndex = envelope.classList.contains('open') ? '4' : '0';
+        }, 300);
     });
 
     letter.addEventListener('click', (e) => {
@@ -33,13 +38,3 @@ function createStar(container) {
     
     container.appendChild(star);
 }
-
-// Add this CSS to your styles.css file
-/*
-.star {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    pointer-events: none;
-}
-*/
